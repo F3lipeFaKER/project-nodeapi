@@ -2,7 +2,14 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', function(req, res){
+router.get('/:id?', function(req, res){
+    if (req.params.id) {
+        res.send('Nota ID' + req.params.id);
+
+    }else{
+        res.send("Todas as notas");
+    }
+
     res.send(['nota aqui']);
 })
 
