@@ -1,10 +1,13 @@
-const express = require('express');
+const { Router } = require('express');
 
-const router = express.Router();
+const router = Router();
 
-router.get('/:id?', function(req, res){
-    if (req.params.id) {
-        res.send('Nota ID' + req.params.id);
+router.get('/:id?', (req, res) => {
+
+    const { id } = req.params;
+
+    if (id) {
+        res.send('Nota ID' + id);
 
     }else{
         res.send("Todas as notas");
@@ -13,13 +16,13 @@ router.get('/:id?', function(req, res){
     res.send(['nota aqui']);
 })
 
-router.post('/', function(req, res){
+router.post('/', (req, res) => {
     res.send({});
 })
-router.put('/:id', function(req, res){
+router.put('/:id', (req, res) => {
     res.send({});
 })
-router.delete('/:id', function(req, res){
+router.delete('/:id', (req, res) => {
     res.send({});
 })
 
