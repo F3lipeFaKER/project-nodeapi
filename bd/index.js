@@ -18,3 +18,7 @@ sequelize.authenticate().then(() => {
     console.log('Erro ao se conectar ao banco '+ options.database);
     console.log(erro);
 });
+
+bd.Sequelize = Sequelize;
+
+module.exports = bd;
