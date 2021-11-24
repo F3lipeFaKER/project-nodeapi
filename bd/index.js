@@ -1,6 +1,14 @@
-const { Sequelize } = require('sequelize');
+const { request } = require('express');
 
-const bd = {};
+const { Sequelize, DataTypes } = require('sequelize');
+
+const inicialiarUsuario = require("./Usuario");
+
+const inicialiarNota = require("./Nota");
+
+const inicialiarChecklist = require("./Checklist");
+
+let bd = {};
 
 const options = {
     username : 'admin',
@@ -19,6 +27,15 @@ sequelize.authenticate().then(() => {
     console.log(erro);
 });
 
+const Usuario = inicialiarUsuario(sequelize,DataTypes);
+
+const Nota = inicialiarNota(sequelize, DataTypes);
+
+const Checklist = inicialiarChecklist(sequelize, DataTypes);
+
+bd = {Usuario, Nota, Checklist};
+
 bd.Sequelize = Sequelize;
+bd.sequelize = sequelize;
 
 module.exports = bd;
