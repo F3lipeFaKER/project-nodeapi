@@ -5,7 +5,7 @@ const porta = 3000;
 
 app.use(express.json());
 
-const bd = require('./bd');
+// const bd = require('./bd');
 
 const nota = require('./rotas/nota');
 const usuario = require('./rotas/usuario');
@@ -21,6 +21,6 @@ res.send("index.aqui")
 );
 
 app.listen(porta, () => {
-console.log('Servidor iniciado na porta ',3000);
+console.log(' O tus tus ta é porta:',3000);
 });
 

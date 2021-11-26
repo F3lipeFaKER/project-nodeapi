@@ -25,7 +25,7 @@ const Nota = sequelize.define('Nota',{
 },
 {
     tableName:'nota',
-    timestampes:false,
+    timestamps:false,
 },
 );
 

@@ -22,7 +22,7 @@ module.exports = (sequelize, Datatypes) => {
     },
     {
         tableName:'checklist',
-        timestampes:false,
+        timestamps:false,
     },
     
     );
